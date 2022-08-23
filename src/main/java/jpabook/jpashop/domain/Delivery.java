@@ -5,9 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**배송 엔티티*/
+
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 public class Delivery {
 
     @Id @GeneratedValue

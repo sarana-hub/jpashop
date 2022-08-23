@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
+/**상품 - 음반 엔티티*/
+
 @Entity
 @Getter @Setter
 public class Album extends Item{
