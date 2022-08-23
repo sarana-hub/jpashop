@@ -31,7 +31,7 @@ public abstract class Item {
 
     //==비즈니스 로직==//
     public void addStock(int quantity) {    //stock 증가
-        this.stockQuantity += quantity;
+        this.stockQuantity += quantity;     //파라미터로 넘어온 수만큼 재고를 늘린다
     }
 
     public void removeStock(int quantity) {     //stock 감소
