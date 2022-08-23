@@ -52,4 +52,44 @@ public class Order {
         delivery.setOrder(this);
     }
 
+
+    // ==생성 메서드==//
+     // 주문 엔티티를 생성할 때 사용
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        //OrderItem을 리스트로(여러개) 넘김
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for (OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        }
+        order.setStatus(OrderStatus.ORDER);
+        order.setOrderDate(LocalDateTime.now());
+        return order;
+    }
+
+    //==비즈니스 로직==//
+    /** 주문 취소 */
+    public void cancel() {
+        if (delivery.getStatus() == DeliveryStatus.COMP) {  //이미 배송을 완료한 상품이면
+            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
+            //(주문을 취소하지 못하도록) 예외를 발생시킨다
+        }
+        this.setStatus(OrderStatus.CANCEL);     //주문 상태를 취소로 변경하고
+        for (OrderItem orderItem : orderItems) {     //주문상품에 주문 취소를 알림
+            orderItem.cancel();
+        }
+    }
+
+    //==조회 로직==//
+    /** 전체 주문 가격 조회 */
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getTotalPrice();
+        }
+        //주문상품들의 가격을 조회해서 더한 값을 반환
+        return totalPrice;
+    }
+
 }
