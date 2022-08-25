@@ -22,6 +22,7 @@
                 <td th:text="${member.address?.city}"></td>
                 <td th:text="${member.address?.street}"></td>
                 <td th:text="${member.address?.zipcode}"></td>
+                <!-- 타임리프에서 ?를 사용하면 null을 무시 -->
             </tr>
             </tbody>
         </table>
