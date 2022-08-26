@@ -36,7 +36,7 @@ public class OrderRepository {
     //주문 검색 기능      //검색 조건에 동적으로 쿼리를 생성해서 주문 엔티티를 조회
 
     /*JPQL로 처리*/
-    /*public List<Order> findAllByString(OrderSearch orderSearch) {
+    public List<Order> findAllByString(OrderSearch orderSearch) {
         //language=JPAQL
         String jpql = "select o From Order o join o.member m";
         boolean isFirstCondition = true;
@@ -70,7 +70,7 @@ public class OrderRepository {
             query = query.setParameter("name", orderSearch.getMemberName());
         }
         return query.getResultList();
-    }*/
+    }
 
     /*JPA Criteria로 처리*/
     /*public List<Order> findAllByCriteria(OrderSearch orderSearch) {
