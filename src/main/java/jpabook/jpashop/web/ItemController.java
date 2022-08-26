@@ -69,10 +69,10 @@ public class ItemController {
     }
 
     /**상품 수정*/
-    @PostMapping("/items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form) {
+    /*@PostMapping("/items/{itemId}/edit")
+    public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") BookForm form) {
         //컨트롤러에 파라미터로 넘어온 item 엔티티 인스턴스는 현재 준영속 상태
-        // 따라서 영속성 컨텍스트의 지원을 받을 수 없고 데이터를 수정해도 변경 감지 기능은 동작X
+        // 따라서 (영속성 컨텍스트의 지원을 받을 수 없고) 데이터를 수정해도 변경 감지 기능은 동작X
         Book book = new Book();
 
         book.setId(form.getId());
@@ -83,6 +83,17 @@ public class ItemController {
         book.setIsbn(form.getIsbn());
 
         itemService.saveItem(book);
+        //Book 객체는 이미 DB에 한번 저장되어서 식별자가 존재 ->준영속 엔티티
+        //(이렇게 임의로 만들어낸 엔티티도 기존 식별자를 가지고 있으면 준영속 엔티티)
+
+        return "redirect:/items";
+    }   컨트롤러에서 어설프게 엔티티를 생성하지 않는다   */
+
+    /**엔티티를 변경할 때는 항상 변경 감지를 사용!*/
+    @PostMapping("/items/{itemId}/edit")
+    public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") BookForm form) {
+        //트랜잭션이 있는 서비스 계층에 식별자( id )와 변경할 데이터를 명확하게 전달
+        itemService.updateItem(form.getId(), form.getName(), form.getPrice());
         return "redirect:/items";
     }
 
