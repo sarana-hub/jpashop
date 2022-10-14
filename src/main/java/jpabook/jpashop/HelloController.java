@@ -12,4 +12,6 @@ public class HelloController {
         model.addAttribute("data", "hello!");
         return "hello";
     }
+    //resources:templates/ +{ViewName}+ .html
+    //resources/templates/hello.html
 }
