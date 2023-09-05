@@ -1,4 +1,4 @@
-spring:
+#spring:
 #  datasource:
   #   url: jdbc:h2:mem:test  #h2 창 꺼도 동작함
   #  username: sa
