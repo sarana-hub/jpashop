@@ -1,11 +1,11 @@
 package jpabook.jpashop.domain;
-
+/*
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-/**배송 엔티티*/
+배송 엔티티
 
 @Entity
 @Getter @Setter
@@ -24,3 +24,4 @@ public class Delivery {
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status; //ENUM [READY(준비), COMP(배송)]
 }
+*/

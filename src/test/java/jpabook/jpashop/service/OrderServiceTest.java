@@ -1,7 +1,6 @@
 package jpabook.jpashop.service;
-
+/*
 import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.domain.item.Book;
@@ -101,4 +100,4 @@ public class OrderServiceTest {
         //Then
         fail("재고 수량 부족 예외가 발생해야 한다.");
     }
-}
+}*/

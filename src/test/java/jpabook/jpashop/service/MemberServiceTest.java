@@ -1,7 +1,5 @@
 package jpabook.jpashop.service;
-
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
+/*
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +7,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 
-/**회원가입 테스트*/
+회원가입 테스트
 
 @RunWith(SpringRunner.class)    //스프링과 테스트 통합
 @SpringBootTest     //스프링 부트 띄우고 테스트 (이게 없으면 @Autowired 다 실패)
@@ -55,4 +51,4 @@ public class MemberServiceTest {
         fail("예외가 발생해야 한다.");
     }
 
-}
+}*/

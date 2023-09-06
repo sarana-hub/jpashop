@@ -1,5 +1,5 @@
 package jpabook.jpashop.domain.item;
-
+/*
 import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**상품 엔티티*/
+상품 엔티티
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -42,4 +42,4 @@ public abstract class Item {
         this.stockQuantity = restStock;
     }
 
-}
+}*/

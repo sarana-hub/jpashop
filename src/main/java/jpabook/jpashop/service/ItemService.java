@@ -1,5 +1,5 @@
 package jpabook.jpashop.service;
-
+/*
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**상품 서비스*/
+상품 서비스
 
 @Service
 @Transactional(readOnly = true)
@@ -45,9 +45,9 @@ public class ItemService {
 
     /*
      * 영속성 컨텍스트가 자동 변경
-     */
+
     /*트랜잭션 안에서 엔티티를 다시 조회, 변경할 값 선택
-    트랜잭션 커밋 시점에 변경 감지(Dirty Checking) 동작해서 데이터베이스에 UPDATE SQL 실행*/
+    트랜잭션 커밋 시점에 변경 감지(Dirty Checking) 동작해서 데이터베이스에 UPDATE SQL 실행
     @Transactional
     public void updateItem(Long itemId, String name, int price) {
         //트랜잭션이 있는 서비스 계층에 식별자( id )와 변경할 데이터를 명확하게 전달 (파라미터 or dto)
@@ -59,4 +59,4 @@ public class ItemService {
         findItem.setName(name);
         findItem.setPrice(price);
     }
-}
+}*/

@@ -1,5 +1,5 @@
 package jpabook.jpashop.web;
-
+/*
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.service.ItemService;
@@ -20,7 +20,7 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
 
-    /**상품 등록*/
+    /**상품 등록
     @GetMapping("/items/new")
     public String createForm(Model model) {
         model.addAttribute("form", new BookForm());
@@ -39,19 +39,19 @@ public class ItemController {
 
         itemService.saveItem(book);
         return "redirect:/items";
-    }
+    }*/
 
 
-    /**상품 목록*/
+    /**상품 목록
     @GetMapping("/items")
     public String list(Model model) {
         List<Item> items = itemService.findItems();
         model.addAttribute("items", items);
         return "items/itemList";
-    }
+    }*/
 
 
-    /**상품 수정 폼*/
+    /**상품 수정 폼
     @GetMapping("/items/{itemId}/edit")
     public String updateItemForm(@PathVariable("itemId") Long itemId, Model model) {
         Book item = (Book) itemService.findOne(itemId);     //수정할 상품을 조회
@@ -66,10 +66,10 @@ public class ItemController {
 
         model.addAttribute("form", form);   //조회 결과를 모델 객체에 담아서
         return "items/updateItemForm";      //뷰에 전달
-    }
+    }*/
 
-    /**상품 수정*/
-    /*@PostMapping("/items/{itemId}/edit")
+    /**상품 수정
+    @PostMapping("/items/{itemId}/edit")
     public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") BookForm form) {
         //컨트롤러에 파라미터로 넘어온 item 엔티티 인스턴스는 현재 준영속 상태
         // 따라서 (영속성 컨텍스트의 지원을 받을 수 없고) 데이터를 수정해도 변경 감지 기능은 동작X
@@ -89,7 +89,7 @@ public class ItemController {
         return "redirect:/items";
     }   컨트롤러에서 어설프게 엔티티를 생성하지 않는다   */
 
-    /**엔티티를 변경할 때는 항상 변경 감지를 사용!*/
+    /**엔티티를 변경할 때는 항상 변경 감지를 사용!
     @PostMapping("/items/{itemId}/edit")
     public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") BookForm form) {
         //트랜잭션이 있는 서비스 계층에 식별자( id )와 변경할 데이터를 명확하게 전달
@@ -97,4 +97,4 @@ public class ItemController {
         return "redirect:/items";
     }
 
-}
+}*/

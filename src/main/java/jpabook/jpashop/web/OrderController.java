@@ -1,6 +1,5 @@
 package jpabook.jpashop.web;
-
-import jpabook.jpashop.domain.Member;
+/*
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderSearch;
 import jpabook.jpashop.domain.item.Item;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**상품 주문 컨트롤러*/
+상품 주문 컨트롤러
 
 @Controller
 @RequiredArgsConstructor
@@ -55,4 +54,4 @@ public class OrderController {
         orderService.cancelOrder(orderId);
         return "redirect:/orders";
     }
-}
+}*/

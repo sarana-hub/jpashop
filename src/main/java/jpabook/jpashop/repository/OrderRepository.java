@@ -1,21 +1,17 @@
 package jpabook.jpashop.repository;
-
-import jpabook.jpashop.domain.Member;
+/*
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderSearch;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.*;
-import java.util.ArrayList;
 import java.util.List;
+*/
 
-
-/**주문 리포지토리*/
+/**주문 리포지토리
 
 @Repository
 //@RequiredArgsConstructor
@@ -30,12 +26,12 @@ public class OrderRepository {
 
     public Order findOne(Long id) { //주문 엔티티를 검색
         return em.find(Order.class, id);
-    }
+    }*/
 
 
     //주문 검색 기능      //검색 조건에 동적으로 쿼리를 생성해서 주문 엔티티를 조회
 
-    /*JPQL로 처리*/
+    /*JPQL로 처리
     public List<Order> findAllByString(OrderSearch orderSearch) {
         //language=JPAQL
         String jpql = "select o From Order o join o.member m";
@@ -70,7 +66,7 @@ public class OrderRepository {
             query = query.setParameter("name", orderSearch.getMemberName());
         }
         return query.getResultList();
-    }
+    }*/
 
     /*JPA Criteria로 처리*/
     /*public List<Order> findAllByCriteria(OrderSearch orderSearch) {
@@ -94,4 +90,4 @@ public class OrderRepository {
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); //최대1000건
         return query.getResultList();
     }*/
-}
+

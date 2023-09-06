@@ -1,7 +1,6 @@
 package jpabook.jpashop.web;
-
+/*
 import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -50,4 +49,4 @@ public class MemberController {
 
         return "members/memberList";    //실행할 뷰 이름을 반환
     }
-}
+}*/
