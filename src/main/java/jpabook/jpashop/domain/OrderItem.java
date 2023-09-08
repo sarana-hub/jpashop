@@ -1,19 +1,20 @@
 package jpabook.jpashop.domain;
-/*
+
 import jpabook.jpashop.domain.item.Item;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-주문상품 엔티티
+/**주문상품 엔티티*/
 
 @Entity
 @Table(name = "order_item")
 @Getter @Setter
 public class OrderItem {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "order_item_id")
     private Long id;
 
@@ -28,11 +29,11 @@ public class OrderItem {
     private int orderPrice; //주문 가격
     private int count; //주문 수량
 
-
+}
 
     //==생성 메서드==//
     //주문상품 엔티티를 생성
-    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+    /*public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);
